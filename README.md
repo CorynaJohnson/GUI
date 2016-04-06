@@ -2,6 +2,7 @@
 Objective: Labs for the GUI class at Oregon Institute of Technology, CST238. These labs will progress towards 1 completed project by Summer 2016.
 
 #Logo
+I'd like to design the logo when the project advances more. I feel like it will allow for a logo that best fits the project.
 
 #Description of project
 This project is a budgeting/to-do helper tool. This will allow whoever to access their budgetting goals quickly and easily. Just bought a coffee? Subtract it from your weekly/monthly/etc budget for whatever category you decide! Need to remember to pay a bill? Jot it down in the to-do section and check it when you get home. This application will allow for students to keep all of their reminders and keep their tight student budget together in one convenient location.

@@ -11,6 +11,7 @@ This project is a budgeting/to-do helper tool. This will allow whoever to access
 C++, Qt, QML, Javascript, SQLite
 
 #Screenshots/Mockups
+Can't figure out how to upload pictures :/
 
 #How to install
 1. Install Qt 5.6 

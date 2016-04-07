@@ -11,7 +11,10 @@ This project is a budgeting/to-do helper tool. This will allow whoever to access
 C++, Qt, QML, Javascript, SQLite
 
 #Screenshots/Mockups
-Can't figure out how to upload pictures :/
+![Alt text](https://github.com/CorynaJohnson/GUI/blob/master/12941085_10206235868159596_359374460_o.jpg?raw=true)
+![Alt text](https://github.com/CorynaJohnson/GUI/blob/master/12953248_10206235867519580_775776462_o.jpg?raw=true)
+![Alt text](https://github.com/CorynaJohnson/GUI/blob/master/12959261_10206235867879589_1579297651_o.jpg?raw=true)
+![Alt text](https://github.com/CorynaJohnson/GUI/blob/master/12948496_10206235867679584_1269669405_o.jpg?raw=true)
 
 #How to install
 1. Install Qt 5.6 

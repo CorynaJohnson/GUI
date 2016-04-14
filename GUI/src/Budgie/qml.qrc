@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>MyButton.qml</file>
-        <file>MyDialog.qml</file>
-        <file>MyTextRect.qml</file>
-    </qresource>
-</RCC>

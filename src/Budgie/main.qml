@@ -1,5 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 1.5
+import Qt.labs.settings 1.0
+import QtMultimedia 5.6
 //Name: Coryna Johnson
 //Lab: Lab_2
 //Project Name: Budgie
@@ -7,41 +9,112 @@ import QtQuick.Controls 1.5
 ApplicationWindow
 {
     visible: true
-    width: 640
-    height: 480
+    width: 350
+    height: 500
     title: qsTr("Budgie")
 
-
-    MyDialog
+    MainHomeScreen
     {
-        //Rect stuff
-        id: splashScreen
-        dialogTextRect.font.pixelSize: 50
-        dialogTextRect.width: parent.width
-        dialogTextRect.height: parent.height/10
-
-        //second rect stuff
-        dialogSecondRect.font.pixelSize: 25
-        dialogSecondRect.width: parent.width
-        dialogSecondRect.height: parent.height/10
-
-        width: parent.width/2
-        height: parent.height/2
-        x: (parent.width/2)-(width/2)
-        y: (parent.height/2)-(height/2)
-
-        //Button stuff
-        dialogTextButton.text: "Click Me!"
-        dialogTextButton.color: "green"
-
-        dialogSecondButton.color: "orange"
-
-        dialogThirdButton.color: "red"
-
-
-
-        //set to true for draging to be enabled :]
-        //dragToggle: true
+        id: homeScreen
+        anchors.fill: parent
     }
+
+    //    MyDialog
+    //    {
+
+
+
+    //        //Rect stuff
+    //        mainScreenRect.font.pixelSize: 50
+    //        mainScreenRect.width: parent.width
+    //        mainScreenRect.height: parent.height/10
+
+    //        //Button stuff
+    //        mainScreenButton.text: "Click Me!"
+    //        mainScreenButton.color: "green"
+
+
+    //    }
+
+
+    //stuff for lecture 4.18.16
+    //    Rectangle
+    //    {
+    //        id: rect_big_wrapper
+    //        anchors.fill:parent
+    //        Settings
+    //        {
+    //            id: settings_global
+    //            property alias hss: video_dog.muted
+    //            property alias water_bottle: rect_big_wrapper.color
+    //        }
+
+    //        Timer
+    //        {
+    //            id: tmr_hello
+    //            interval: 5000 //5 seconds
+    //            running: true
+    //            onTriggered:
+    //            {
+    //                video_dog.play();
+    //            }
+    //        }
+
+    //        Video
+    //        {
+    //            id: video_dog
+    //            source: "../../video/roses_for_the_dead.mp4"
+    //            anchors.horizontalCenter: parent.horizontalCenter
+    //            anchors.verticalCenter: parent.verticalCenter
+    //            //fillMode: VideoOutput.Stretch
+    //            height: 200
+    //            width: 200
+
+    //            //autoPlay: true
+
+    //            MouseArea
+    //            {
+    //                id: ma_mousearea
+    //                anchors.fill: parent
+    //                //store the state of the video
+    //                onClicked:
+    //                {
+    //                    video_dog.muted = !video_dog.muted
+    //                }
+    //            }
+    //        }
+    //        Row
+    //        {
+    //            spacing: 10
+
+    //            Repeater
+    //            {
+    //                id: repeater_ashley
+    //                model: 4
+    //                anchors.top:video_dog.bottom
+    //                anchors.horizontalCenter: parent.horizontalCenter
+
+    //                Rectangle
+    //                {
+    //                    height: 100
+    //                    width: 100
+
+    //                    color: Qt.hsla(Math.random(), .5, .5, 1);
+
+    //                    MouseArea
+    //                    {
+    //                        id: ma_mousearea_2
+    //                        anchors.fill: parent
+
+    //                        onClicked:
+    //                        {
+    //                            //reference rectangle inside a repeater
+    //                            rect_big_wrapper.color = repeater_ashley.itemAt(index).color
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
 
 }

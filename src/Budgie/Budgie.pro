@@ -4,7 +4,9 @@ QT += qml quick
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    Category.cpp \
+    Budget.cpp
 
 RESOURCES += \
     qml.qrc \
@@ -17,3 +19,7 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 DISTFILES +=
+
+HEADERS += \
+    Category.h \
+    Budget.h

@@ -6,6 +6,12 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    //for settings
+    QCoreApplication::setApplicationName("pig");
+    QCoreApplication::setOrganizationName("purple");
+    QCoreApplication::setOrganizationDomain(".gobigorgohome");
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();

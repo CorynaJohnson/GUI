@@ -4,5 +4,6 @@
         <file>MyButton.qml</file>
         <file>MyDialog.qml</file>
         <file>MyTextRect.qml</file>
+        <file>MainHomeScreen.qml</file>
     </qresource>
 </RCC>

@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     //for settings
-    QCoreApplication::setApplicationName("pig");
-    QCoreApplication::setOrganizationName("purple");
+    QCoreApplication::setApplicationName("Budgie");
+    QCoreApplication::setOrganizationName("GUI");
     QCoreApplication::setOrganizationDomain(".gobigorgohome");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

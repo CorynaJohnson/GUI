@@ -1,0 +1,11 @@
+https://github.com/CorynaJohnson/GUI
+
+I created 2 classes. I have a budget class and a category class. They don't directly need to
+interact with each other because they don't depend on each other's information. The budget
+class will handle everything with calculating the budget left - it doesn't care what the
+category is. The category just needs to know information about what you want within your
+category. This may change over time but right now they are seperated and not dependent.
+
+I expect the user to click through the options in the menu and have a keyboard input for
+the names of categories and the dollar amounts. They should be able to go back and change
+information entered.

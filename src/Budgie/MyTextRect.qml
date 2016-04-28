@@ -12,6 +12,7 @@ Rectangle
     Text
     {
         id: rect_text
+        //color: "grey"
 
         //anchors.centerIn: parent
     }

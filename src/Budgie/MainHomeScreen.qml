@@ -6,15 +6,49 @@ MyTextRect
     id: mainScreen
     text: "Budgie - GUI Project"
     font.family: "Tempus Sans ITC"
-    font_color: "blue"
+    anchorText.horizontalCenter: horizontalCenter
+    anchorText.top: top
+    font_color: color_check ? "blue" : "white"
     font.pixelSize: 35
     color: "transparent"
 
-    //anchors.horizontalCenter: parent.horizontalCenter
-    //anchors.top: parent.top
+    property bool color_check: false
+    onColor_checkChanged:
+    {
+        if(color_check)
+        {
+            button1.color = "white"
+            button1.mainScreenButton.color = "black"
+            button1.border.color = "black"
 
-    anchorText.horizontalCenter: horizontalCenter
-    anchorText.top: top
+            button2.color = "white"
+            button2.mainScreenButton.color = "black"
+            button2.border.color = "black"
+
+            button3.color = "white"
+            button3.mainScreenButton.color = "black"
+            button3.border.color = "black"
+        }
+        else
+        {
+            button1.color = "#604169E1"
+            button1.mainScreenButton.color = "white"
+            button1.border.color = "#904169E1"
+
+            button2.color = "#604169E1"
+            button2.mainScreenButton.color = "white"
+            button2.border.color = "#904169E1"
+
+            button3.color = "#604169E1"
+            button3.mainScreenButton.color = "white"
+            button3.border.color = "#904169E1"
+        }
+    }
+
+
+    signal openSettings
+
+
 
     Column
     {
@@ -25,34 +59,54 @@ MyTextRect
         anchors.centerIn: mainScreen
         anchors.top: mainTitle.bottom
 
+
         MyButton
         {
             id: button1
             mainScreenButton.text: "Budget"
             mainScreenButton.font.family: "Matura MT Script Capitals"
             mainScreenButton.font.pixelSize: 23
-            mainScreenButton.color: "white"
+
+            border.width: 5
             width: mainScreen.width/3
             height: mainScreen.height/8
-            color: "#604169E1"
-            border.width: 5
-            border.color: "#904169E1"
+            color: color_check ? "white" : "#604169E1"
+            mainScreenButton.color: color_check ? "black" : "white"
+            border.color: color_check ? "black" : "#904169E1"
 
             mouseArea
             {
                 onEntered:
                 {
-                    color = "#60e6eeff"
-                    mainScreenButton.color = "#4169E1"
+                    if(color_check)
+                    {
+                        color = "black"
+                        mainScreenButton.color = "white"
+                    }
+                    else
+                    {
+                        color = "#60e6eeff"
+                        mainScreenButton.color = "#4169E1"
+                    }
                 }
 
                 onExited:
                 {
-                    color = "#604169E1"
-                    mainScreenButton.color = "white"
+                    if(color_check)
+                    {
+                        color = "white"
+                        mainScreenButton.color = "black"
+                    }
+                    else
+                    {
+                        color = "#604169E1"
+                        mainScreenButton.color = "white"
+                    }
                 }
             }
         }
+
+
 
         MyButton
         {
@@ -60,62 +114,107 @@ MyTextRect
             mainScreenButton.text: "Categories"
             mainScreenButton.font.family: "Matura MT Script Capitals"
             mainScreenButton.font.pixelSize: 23
-            mainScreenButton.color: "white"
+
+            border.width: 5
             width: mainScreen.width/3
             height: mainScreen.height/8
-            color: "#604169E1"
-            border.width: 5
-            border.color: "#904169E1"
+            color: color_check ? "white" : "#604169E1"
+            mainScreenButton.color: color_check ? "black" : "white"
+            border.color: color_check ? "black" : "#904169E1"
 
             mouseArea
             {
+
                 onEntered:
                 {
-                    color = "#60e6eeff"
-                    mainScreenButton.color = "#4169E1"
+                    if(color_check)
+                    {
+                        color = "black"
+                        mainScreenButton.color = "white"
+                    }
+                    else
+                    {
+                        color = "#60e6eeff"
+                        mainScreenButton.color = "#4169E1"
+                    }
                 }
 
                 onExited:
                 {
-                    color = "#604169E1"
-                    mainScreenButton.color = "white"
+                    if(color_check)
+                    {
+                        color = "white"
+                        mainScreenButton.color = "black"
+                    }
+                    else
+                    {
+                        color = "#604169E1"
+                        mainScreenButton.color = "white"
+                    }
                 }
+
             }
         }
+
 
         MyButton
         {
             id: button3
-            mainScreenButton.text: "To-Do"
+            mainScreenButton.text: "Settings"
             mainScreenButton.font.family: "Matura MT Script Capitals"
             mainScreenButton.font.pixelSize: 23
-            mainScreenButton.color: "white"
+            border.width: 5
+
             width: mainScreen.width/3
             height: mainScreen.height/8
-            color: "#604169E1"
-            border.width: 5
-            border.color: "#904169E1"
+            color: color_check ? "white" : "#604169E1"
+            mainScreenButton.color: color_check ? "black" : "white"
+            border.color: color_check ? "black" : "#904169E1"
 
             mouseArea
             {
                 onEntered:
                 {
-                    color = "#60e6eeff"
-                    mainScreenButton.color = "#4169E1"
+                    if(color_check)
+                    {
+                        color = "black"
+                        mainScreenButton.color = "white"
+                    }
+                    else
+                    {
+                        color = "#60e6eeff"
+                        mainScreenButton.color = "#4169E1"
+                    }
                 }
 
                 onExited:
                 {
-                    color = "#604169E1"
-                    mainScreenButton.color = "white"
+                    if(color_check)
+                    {
+                        color = "white"
+                        mainScreenButton.color = "black"
+                    }
+                    else
+                    {
+                        color = "#604169E1"
+                        mainScreenButton.color = "white"
+                    }
+                }
+                onClicked:
+                {
+                    openSettings()
                 }
             }
         }
     }
+
+    property alias toggleBackground: backgroundImage.source
     Image
     {
         id: backgroundImage
-        source: "../../img/budgiepiccrop.jpg"
+
+        source: !color_check ? "../../img/budgiepiccrop.jpg" : "../../img/budgiepic_colorblind.jpg"
+
         anchors.top: mainTitle.bottom
         anchors.bottom: mainScreen.bottom
         anchors.right: mainScreen.right
@@ -124,3 +223,4 @@ MyTextRect
         z: -1
     }
 }
+

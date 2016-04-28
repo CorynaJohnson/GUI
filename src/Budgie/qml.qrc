@@ -5,5 +5,6 @@
         <file>MyDialog.qml</file>
         <file>MyTextRect.qml</file>
         <file>MainHomeScreen.qml</file>
+        <file>SettingsScreen.qml</file>
     </qresource>
 </RCC>

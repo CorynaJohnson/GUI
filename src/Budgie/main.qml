@@ -28,6 +28,11 @@ ApplicationWindow
             homeScreen.visible = false
             settingsScreen.visible = true
         }
+        onOpenDancingBudgie:
+        {
+            budgieDance.visible = true
+            homeScreen.visible = false
+        }
     }
 
     SettingsScreen
@@ -40,6 +45,19 @@ ApplicationWindow
         {
             homeScreen.visible = true
             settingsScreen.visible = false
+        }
+
+    }
+
+    SplashScreen
+    {
+        id: budgieDance
+        visible: false
+
+        onOpenMainScreen:
+        {
+            homeScreen.visible = true
+            budgieDance.visible = false
         }
 
     }

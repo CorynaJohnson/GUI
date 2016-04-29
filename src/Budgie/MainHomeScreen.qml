@@ -206,6 +206,45 @@ MyTextRect
                 }
             }
         }
+
+    }
+    signal openDancingBudgie
+    MyButton
+    {
+        id: dancingBudgie
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 15
+        border.width: 1
+        border.color: "black"
+        color: "green"
+        width: 70
+        height: 30
+        Text
+        {
+            text: "Dance!"
+            color: "white"
+            font.pixelSize: 20
+        }
+
+        mouseArea
+        {
+            anchors.fill: dancingBudgie
+            onEntered:
+            {
+                color = "red"
+            }
+
+            onExited:
+            {
+                color = "green"
+            }
+            onClicked:
+            {
+                openDancingBudgie()
+            }
+        }
     }
 
     property alias toggleBackground: backgroundImage.source

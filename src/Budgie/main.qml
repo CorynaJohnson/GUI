@@ -18,10 +18,16 @@ ApplicationWindow
         id: homeScreen
         anchors.fill: parent
 
-        font_color: !settingsScreen.color_setting ? "blue" : "black"
+        font_color: !settingsScreen.color_setting ? "dark blue" : "black"
         color_check: settingsScreen.color_setting
         //toggleBackground: settingsScreen.color_setting
         color: settingsScreen.color_setting ? "transparent" : "transparent"
+
+        onOpenMainBudget:
+        {
+            homeScreen.visible = false
+            mainBudgetScreen.visible = true
+        }
 
         onOpenSettings:
         {
@@ -33,6 +39,11 @@ ApplicationWindow
             budgieDance.visible = true
             homeScreen.visible = false
         }
+        onOpenAddCategory:
+        {
+            homeScreen.visible= false
+            addCategoryScreen.visible = true
+        }
     }
 
     SettingsScreen
@@ -40,7 +51,7 @@ ApplicationWindow
         id: settingsScreen
         //anchors.fill: parent
         visible: false
-
+        color_check: settingsScreen.color_setting
         onOpenMainScreen:
         {
             homeScreen.visible = true
@@ -60,6 +71,86 @@ ApplicationWindow
             budgieDance.visible = false
         }
 
+    }
+
+    BudgetScreenMain
+    {
+        id: mainBudgetScreen
+        visible: false
+        color_check: !settingsScreen.color_setting
+
+
+        onOpenMainScreen:
+        {
+            homeScreen.visible = true
+            mainBudgetScreen.visible = false
+        }
+        onOpenAddExpense:
+        {
+            addExpenseScreen.visible = true
+            mainBudgetScreen.visible = false
+        }
+        onOpenViewExpense:
+        {
+            viewExpensesScreen.visible = true
+            mainBudgetScreen.visible = false
+        }
+    }
+
+    AddExpense
+    {
+        id: addExpenseScreen
+        visible: false
+
+        onOpenMainBudget:
+        {
+            mainBudgetScreen.visible = true
+            addExpenseScreen.visible = false
+        }
+    }
+
+    AddCategory
+    {
+        id: addCategoryScreen
+        visible: false
+
+        onOpenMainScreen:
+        {
+            homeScreen.visible = true
+            addCategoryScreen.visible = false
+        }
+    }
+
+    ViewExpenses
+    {
+        id: viewExpensesScreen
+        visible: false
+
+        onOpenMainBudget:
+        {
+            mainBudgetScreen.visible = true
+            viewExpensesScreen.visible = false
+        }
+
+        onOpenViewExpensesDetail:
+        {
+            viewExpensesScreen.visible = false
+            viewExpensesDetailScreen.visible = true
+        }
+    }
+
+    ViewExpensesDetail
+    {
+        id: viewExpensesDetailScreen
+        visible: false
+
+        color_check: !settingsScreen.color_setting
+
+        onOpenViewExpenses:
+        {
+            viewExpensesDetailScreen.visible = false
+            viewExpensesScreen.visible = true
+        }
     }
 
     //    MyDialog

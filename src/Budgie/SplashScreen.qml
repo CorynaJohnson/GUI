@@ -35,7 +35,7 @@ MyTextRect
         {
             id: txt_btn_back
             text: "Back"
-            font.family: "BELLABOO"
+            font.family: "Matura MT Script Capitals"
             font.pointSize: 12
             //anchors.bottomMargin: 100
             anchors.horizontalCenter:  parent.horizontalCenter

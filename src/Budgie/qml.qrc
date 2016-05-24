@@ -7,5 +7,10 @@
         <file>MainHomeScreen.qml</file>
         <file>SettingsScreen.qml</file>
         <file>SplashScreen.qml</file>
+        <file>BudgetScreenMain.qml</file>
+        <file>AddExpense.qml</file>
+        <file>AddCategory.qml</file>
+        <file>ViewExpenses.qml</file>
+        <file>ViewExpensesDetail.qml</file>
     </qresource>
 </RCC>

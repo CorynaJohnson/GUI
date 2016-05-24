@@ -4,15 +4,17 @@ import QtQuick 2.0
 MyTextRect
 {
     id: mainScreen
-    text: "Budgie - GUI Project"
-    font.family: "Tempus Sans ITC"
+    text: "Budgie"
+    font.family: "AR BERKLEY"
+    font.bold: true
     anchorText.horizontalCenter: horizontalCenter
     anchorText.top: top
     font_color: color_check ? "blue" : "white"
-    font.pixelSize: 35
-    color: "transparent"
-
+    font.pixelSize: 50
     property bool color_check: false
+
+
+
     onColor_checkChanged:
     {
         if(color_check)
@@ -45,10 +47,10 @@ MyTextRect
         }
     }
 
-
     signal openSettings
-
-
+    signal openDancingBudgie
+    signal openMainBudget
+    signal openAddCategory
 
     Column
     {
@@ -103,6 +105,11 @@ MyTextRect
                         mainScreenButton.color = "white"
                     }
                 }
+
+                onClicked:
+                {
+                    openMainBudget()
+                }
             }
         }
 
@@ -151,6 +158,10 @@ MyTextRect
                         color = "#604169E1"
                         mainScreenButton.color = "white"
                     }
+                }
+                onClicked:
+                {
+                    openAddCategory()
                 }
 
             }
@@ -208,7 +219,7 @@ MyTextRect
         }
 
     }
-    signal openDancingBudgie
+
     MyButton
     {
         id: dancingBudgie
@@ -248,6 +259,7 @@ MyTextRect
     }
 
     property alias toggleBackground: backgroundImage.source
+
     Image
     {
         id: backgroundImage
@@ -258,7 +270,8 @@ MyTextRect
         anchors.bottom: mainScreen.bottom
         anchors.right: mainScreen.right
         anchors.left: mainScreen.left
-        //anchors.fill: mainScreen
+        anchors.fill: mainScreen
+
         z: -1
     }
 }

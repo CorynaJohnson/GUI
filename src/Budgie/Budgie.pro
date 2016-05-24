@@ -6,6 +6,7 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     Category.cpp \
+    Expense.cpp \
     Budget.cpp
 
 RESOURCES += \
@@ -22,4 +23,5 @@ DISTFILES +=
 
 HEADERS += \
     Category.h \
+    Expense.h \
     Budget.h

@@ -14,13 +14,14 @@ MyTextRect
     anchorText.horizontalCenter: horizontalCenter
     anchorText.top: top
     text: "Settings"
-    font.family: "Tempus Sans ITC"
+    font.family: "AR BERKLEY"
     font.pixelSize: 40
 
     color: "transparent"
 
     signal openMainScreen
 
+    property bool color_check: false
     property alias color_setting: sw_colorblind.checked
     Settings
     {
@@ -78,12 +79,9 @@ MyTextRect
         height: 30
         width: 75
         border.color: "black"
-        //anchors.horizontalCenter: parent.horizontalCenter
-        //anchors.top: text_colorblind.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        //anchors.topMargin: 100
-        //anchors.bottomMargin: 100
+        anchors.top: parent.top
+        anchors.left: parent.left
+
         mouseArea
         {
             onClicked:
@@ -92,14 +90,12 @@ MyTextRect
             }
         }
 
-
         Text
         {
             id: txt_btn_back
             text: "Back"
-            font.family: "BELLABOO"
+            font.family: "Matura MT Script Capitals"
             font.pointSize: 12
-            //anchors.bottomMargin: 100
             anchors.horizontalCenter:  parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
         }

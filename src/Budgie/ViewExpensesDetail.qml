@@ -98,7 +98,7 @@ MyTextRect
 
                 Rectangle
                 {
-                    height: 20
+                    height: 35
                     width: expenseTable.width/2
                     border.width: 1
                     Text
@@ -112,7 +112,7 @@ MyTextRect
                 {
                     width:expenseTable.width/2
                     border.width: 1
-                    height:20
+                    height:35
 
                     Text
                     {

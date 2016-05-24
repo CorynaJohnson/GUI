@@ -17,6 +17,8 @@ MyTextRect
     color: "transparent"
 
     signal openMainBudget
+    signal openAddExpense
+
     property bool color_check: false
 
     MyButton
@@ -157,7 +159,7 @@ MyTextRect
                 viewExpensesDetailScreen.update_expenses()
                 cleartextreason = ""
                 cleartextspent = ""
-                openMainBudget()
+                openAddExpense()
             }
         }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+	<Name>Budgie</Name>
+	<Version>1.0.0</Version>
+	<Title>Budgie Installer</Title>
+	<Publisher>Coryna</Publisher>
+	<StartMenuDir>Budgie</StartMenuDir>
+	<TargetDir>@RootDir@/Budgie</TargetDir>
+</Installer>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+	<DisplayName>Budgie</DisplayName>
+	<Description>Installing Budgie App</Description>
+	<Version>0.1.0-1</Version>
+	<ReleaseDate>2016-05-26</ReleaseDate>
+	<Default>true</Default>
+</Package>

@@ -227,16 +227,18 @@ MyTextRect
         anchors.bottomMargin: 10
         anchors.right: parent.right
         anchors.rightMargin: 15
-        border.width: 1
-        border.color: "black"
-        color: "green"
+        //border.width: 1
+        //border.color: "black"
+        //color: "green"
         width: 70
         height: 30
+        color: "transparent"
         Text
         {
-            text: "Dance!"
-            color: "white"
+            //text: "Dance!"
+            //color: "white"
             font.pixelSize: 20
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         mouseArea
@@ -244,12 +246,12 @@ MyTextRect
             anchors.fill: dancingBudgie
             onEntered:
             {
-                color = "red"
+                //color = "red"
             }
 
             onExited:
             {
-                color = "green"
+                //color = "green"
             }
             onClicked:
             {

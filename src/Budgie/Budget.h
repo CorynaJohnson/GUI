@@ -28,6 +28,7 @@ public slots:
     void setCurrentCategory(int index);
     int getCurrentCategory();
     double getBudgetTotal();
+    double getExpensesLeft();
 private:
     vector<Category> m_categories;
     int m_current_category;

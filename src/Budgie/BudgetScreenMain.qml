@@ -124,6 +124,14 @@ MyTextRect
         {
             budgetModel.set(count, {"name": Budget.getName(count), "spent":Budget.getTotalSpent(count), "remaining":Budget.getAllowance(count)})
         }
+        totalBud = Budget.getBudgetTotal()
+        leftBud = Budget.getExpensesLeft()
+    }
+
+
+    function getTotal()
+    {
+        var total = Budget.getBudgetTotal()
     }
 
     Rectangle
@@ -165,7 +173,7 @@ MyTextRect
                         text: name
                         //text: Budget.getName()
                         anchors.centerIn: parent
-                        font.pixelSize: 18
+                        font.pixelSize: 14
                     }
                 }
                 Rectangle
@@ -177,7 +185,7 @@ MyTextRect
                     {
                         text: spent
                         anchors.centerIn: parent
-                        font.pixelSize: 18
+                        font.pixelSize: 14
                     }
                 }
                 Rectangle
@@ -191,12 +199,12 @@ MyTextRect
                         color:  Budget.getType(index) ? "green" : "red"
                         text: remaining
                         anchors.centerIn: parent
-                        font.pixelSize: 18
+                        font.pixelSize: 14
                     }
                 }
             }
-
         }
+
         ListView
         {
             id: budgetList
@@ -210,9 +218,10 @@ MyTextRect
             id: tableHeader
             Text
             {
-                text: " Category      Spent     Allowance"
+                text: " Category   Spent   Allowance"
                 font.pixelSize: 20
                 color: "black"
+                font.bold: true
             }
             color: "white"
             height: 25
@@ -226,15 +235,41 @@ MyTextRect
         }
     }
 
-
+    property alias totalBud: totalValue.text
     Rectangle
     {
         id: totalRow
         Text
         {
-            text: " Total Left: " + Budget.getBudgetTotal()
+            id: txtRow
+            text: "Total Left: "
             font.pixelSize: 20
+            anchors.left: parent.left
+            anchors.leftMargin: 5
+            font.bold: true
         }
+
+        Text
+        {
+            id: totalValue
+            text: totalBud
+            color:
+            {
+                if(totalBud < 0)
+                    "red"
+                else
+                {
+                    totalBud = "None"
+                    "green"
+                }
+            }
+
+            font.pixelSize: 20
+            anchors.right: parent.right
+            anchors.rightMargin: 5
+            font.bold: true
+        }
+
         color: "white"
         height: 25
         border.color: "black"
@@ -246,6 +281,57 @@ MyTextRect
         //anchors.bottomMargin: 20
         z: 1
     }
+
+    property alias leftBud: leftValue.text
+    Rectangle
+    {
+        id: totalExpensesLeft
+        Text
+        {
+            id: leftRow
+            text: "Total Allowance Left: "
+            font.pixelSize: 20
+            anchors.left: parent.left
+            anchors.leftMargin: 5
+
+        }
+
+        Text
+        {
+            id: leftValue
+            text: leftBud
+            color:
+            {
+                if(leftBud < 0)
+                {
+                    leftBud = leftBud*-1
+                    "red"
+                }
+                else
+                {
+                    leftBud = "None"
+                    "green"
+                }
+            }
+
+            font.pixelSize: 20
+            anchors.right: parent.right
+            anchors.rightMargin: 5
+
+        }
+
+        color: "white"
+        height: 25
+        border.color: "black"
+        border.width: 2
+
+        width: budgetTable.width
+        anchors.bottom: totalRow.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.bottomMargin: 20
+        z: 1
+    }
+
     Image
     {
         z: -1

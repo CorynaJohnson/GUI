@@ -59,6 +59,12 @@ MyTextRect
         anchors.top: allowanceHeader.bottom
         width: 9*(parent.width)/10
         placeholderText: qsTr("Enter Allowance...")
+
+        validator: DoubleValidator{
+                    notation: "StandardNotation"
+                    decimals: 2
+                }
+
     }
 
     Text

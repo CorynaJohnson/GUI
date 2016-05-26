@@ -15,12 +15,12 @@ MyTextRect
     {
         id: back_button_dancingbudgie
         height: 30
-        width: 75
+        width: 150
         border.color: "black"
-        //anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
         //anchors.top: text_colorblind.bottom
         anchors.top: parent.top
-        anchors.left: parent.left
+        //anchors.left: parent.left
         //anchors.topMargin: 100
         //anchors.bottomMargin: 100
         mouseArea
@@ -34,9 +34,9 @@ MyTextRect
         Text
         {
             id: txt_btn_back
-            text: "Back"
+            text: "Continue"
             font.family: "Matura MT Script Capitals"
-            font.pointSize: 12
+            font.pointSize: 20
             //anchors.bottomMargin: 100
             anchors.horizontalCenter:  parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter

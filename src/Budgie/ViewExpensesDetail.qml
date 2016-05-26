@@ -105,7 +105,7 @@ MyTextRect
                     {
                         text: reason
                         anchors.centerIn: parent
-                        font.pixelSize: 20
+                        font.pixelSize: 14
                     }
                 }
                 Rectangle
@@ -116,10 +116,10 @@ MyTextRect
 
                     Text
                     {
-                        color:  Budget.getType(index) ? "green" : "red"
+
                         text: spent
                         anchors.centerIn: parent
-                        font.pixelSize: 20
+                        font.pixelSize: 14
                     }
                 }
             }

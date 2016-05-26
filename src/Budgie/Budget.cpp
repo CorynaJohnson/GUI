@@ -30,7 +30,23 @@ double Budget::getBudgetTotal()
     double sum = 0;
     for(int i = 0; i < m_categories.size(); i++)
     {
-        sum += m_categories[i].sumExpenses();
+        if(m_categories[i].getType())
+            sum += m_categories[i].getAllowance();
+        else
+            sum -= m_categories[i].sumExpenses();
+    }
+    return sum;
+}
+
+double Budget::getExpensesLeft()
+{
+    double sum = 0;
+    for(int i = 0; i < m_categories.size(); i++)
+    {
+        if(m_categories[i].getType())
+            sum += 0;
+        else
+            sum -= m_categories[i].getAllowance();
     }
     return sum;
 }

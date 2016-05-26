@@ -17,6 +17,7 @@ ApplicationWindow
     {
         id: homeScreen
         anchors.fill: parent
+        visible: false
 
         font_color: !settingsScreen.color_setting ? "dark blue" : "black"
         color_check: settingsScreen.color_setting
@@ -63,7 +64,8 @@ ApplicationWindow
     SplashScreen
     {
         id: budgieDance
-        visible: false
+        //visible: false
+        anchors.fill: parent
 
         onOpenMainScreen:
         {
